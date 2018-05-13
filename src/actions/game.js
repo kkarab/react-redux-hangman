@@ -5,11 +5,14 @@ import {NEW_GAME, MAKE_GUESS} from './types.js';
 
 
 export const newGame = () => {
-  const word = randomWord()
+  const word = randomWord();
+  const guesses = [];
+  console.log('in action newGame: ' + word)
   return {
     type: NEW_GAME,
     payload: {
-      word
+      word,
+      guesses
     }
   }
 };

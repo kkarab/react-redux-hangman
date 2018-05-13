@@ -6,10 +6,13 @@ import {randomWord} from '../lib/game.js';
 const initialState = "";
 
 export default (state = initialState, { type, payload } = {}) => {
+  console.log('word reducer');
+  console.log(type);
+  console.log(payload);
   switch (type) {
     case NEW_GAME:
       console.log('action: NEW_GAME');
-      return randomWord()
+      return payload.word
     default :
       return state
   }
